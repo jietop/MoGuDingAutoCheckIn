@@ -1,16 +1,17 @@
 /*
  * @Author: XiaoKang
  * @Date: 2020-11-06 16:29:54
- * @LastEditTime: 2020-11-06 22:21:00
+ * @LastEditTime: 2020-11-06 23:09:21
  * @Description: 开始执行签到
  */
 
 function saveType() {
   var date = new Date();
   let type = "START";
-  if (date.getHours() > 18) {
+  if (date.getHours() >= 11 && date.getHours() <= 15) {
     type = "END";
   }
+  console.log(date);
   return type;
 }
 async function save(axios, planId) {
